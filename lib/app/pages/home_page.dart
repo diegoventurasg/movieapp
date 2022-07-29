@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 import '../controllers/movie_controller.dart';
+import '../decorators/movies_cache_repository_decorator.dart';
 import '../models/movies_model.dart';
 import '../repositories/movies_repository_imp.dart';
 import '../services/dio_service_imp.dart';
@@ -16,7 +17,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final MovieController _controller = MovieController(
-    MoviesRepositoryImp(DioServiceImp()),
+    MoviesCacheRepositoryDecorator(
+      MoviesRepositoryImp(
+        DioServiceImp(),
+      ),
+    ),
   );
 
   @override
@@ -40,8 +45,35 @@ class _HomePageState extends State<HomePage> {
                               Text('Movies',
                                   style: Theme.of(context).textTheme.headline3),
                               const SizedBox(height: 20),
-                              TextField(
-                                onChanged: _controller.onChanged,
+                              Container(
+                                padding: const EdgeInsets.all(8),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Colors.grey.withOpacity(0.05),
+                                      Colors.grey.withOpacity(0.15),
+                                      Colors.grey.withOpacity(0.05),
+                                    ],
+                                    stops: const [0, 7, 1],
+                                  ),
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: TextField(
+                                        onChanged: _controller.onChanged,
+                                        decoration: const InputDecoration(
+                                          prefixIcon: Icon(Icons.search),
+                                          fillColor: Colors.white30,
+                                          focusColor: Colors.white30,
+                                          hoverColor: Colors.white30,
+                                        ),
+                                        cursorColor: Colors.white30,
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ],
                           ));
