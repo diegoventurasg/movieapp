@@ -1,16 +1,13 @@
 # movieapp
 
-A new Flutter project.
+Projeto desenvolvido durante as aulas do professor [Deivid Willyan](https://www.youtube.com/c/DeividWillyan).
 
-## Getting Started
+[FLUTTER NV1 - Movie APP](https://www.youtube.com/watch?v=I7K6krnsEzc&list=PLRpTFz5_57cvo0CHf-AnojOvpznz8YO7S&index=24)
 
-This project is a starting point for a Flutter application.
+## Executando o projeto
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Defina no arquivo .env o token da API The Movie Database (remova o .example do arquivo .env.example).
+ 
+ ```cl
+TOKEN=
+```
