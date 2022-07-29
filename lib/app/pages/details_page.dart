@@ -40,7 +40,7 @@ class DetailsPage extends StatelessWidget {
                 movie.overview,
                 style: Theme.of(context).textTheme.subtitle1,
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -48,6 +48,7 @@ class DetailsPage extends StatelessWidget {
                   Text(movie.originalTitle),
                 ],
               ),
+              const SizedBox(height: 8),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
